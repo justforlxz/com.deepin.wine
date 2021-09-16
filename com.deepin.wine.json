@@ -1,0 +1,46 @@
+{
+  "id": "com.deepin.wine.Sdk",
+  "id-platform": "com.deepin.wine.Platform",
+  "branch": "5.0.0",
+  "runtime": "org.freedesktop.Platform/i386",
+  "runtime-version": "18.08",
+  "sdk": "org.freedesktop.Sdk/i386",
+  "build-runtime": true,
+  "separate-locales": false,
+
+  "finish-args": [
+    "--sdk=com.deepin.wine.Sdk//5.0.0",
+    "--runtime=com.deepin.wine.Platform//5.0.0"
+  ],
+
+  "modules": [
+    {
+      "name": "deepin-wine",
+      "buildsystem": "simple",
+      "build-commands": ["./install.sh"],
+      "cleanup": [],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git"
+        },
+        {
+          "type": "file",
+          "url": "http://ftp.cn.debian.org/debian/pool/main/p/p7zip/p7zip_16.02+dfsg-8_amd64.deb"
+        },
+        {
+          "type": "file",
+          "path": "./install.sh"
+        },
+        {
+          "type": "file",
+          "url": "https://raw.githubusercontent.com/sonatype/maven-guide-zh/master/content-zh/src/main/resources/fonts/simsun.ttc"
+        },
+        {
+          "type": "file",
+          "url": "https://raw.githubusercontent.com/owent-utils/font/master/%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91/MSYH.TTC"
+        }
+      ]
+    }
+  ]
+}
