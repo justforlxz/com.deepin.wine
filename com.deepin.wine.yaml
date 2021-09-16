@@ -1,0 +1,55 @@
+# 如果觉得好用，请收藏或则分享本站
+id: com.deepin.wine.Sdk
+id-platform: com.deepin.wine.Platform
+branch: 5.0.0
+runtime: org.freedesktop.Platform/i386
+runtime-version: '18.08'
+sdk: org.freedesktop.Sdk/i386
+build-runtime: true
+separate-locales: false
+finish-args:
+  - '--sdk=com.deepin.wine.Sdk//5.0.0'
+  - '--runtime=com.deepin.wine.Platform//5.0.0'
+modules:
+  - name: deepin-wine
+    buildsystem: simple
+    build-commands:
+      - ./install.sh
+    cleanup: []
+    sources:
+      - type: archive
+        url: >-
+          https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-elf-verify_0.2.0.6-1_amd64.deb
+        sha256: edd619858dd643709ba4f0bce2d6eb015b3341962c6396f161bba42df486b769
+      - type: archive
+        url: >-
+          https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-i386_5.0.16-1_i386.deb
+        sha256: ea3f354438483a0f8f48e015905bc52a41a06d6ff27910c8b71f22f7fb223bdf
+      - type: archive
+        url: >-
+          https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable-amd64_5.0.33-1_amd64.deb
+        sha256: bd14d3756d2328759d6cd83f1177f0046d5d2d255b92b9faefbff5a25c0812d5
+      - type: archive
+        url: >-
+          https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable-i386_5.0.33-1_i386.deb
+        sha256: 49cdaa65b237900b431c1c7b2c11bf1f6460d904bba42bf6697f638a69d054b5
+      - type: archive
+        url: >-
+          https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable_5.0.33-1_amd64.deb
+        sha256: bd14d3756d2328759d6cd83f1177f0046d5d2d255b92b9faefbff5a25c0812d5
+      - type: archive
+        url: >-
+          https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5_5.0.16-1_i386.deb
+        sha256: c50f7095baa3c8f9ff330ad5215c439362a8f3e0f7621a20ecea0890e9e3c621
+      - type: archive
+        url: >-
+          http://ftp.cn.debian.org/debian/pool/main/p/p7zip/p7zip_16.02+dfsg-8_amd64.deb
+        sha256: 7965acc3c5afef9ea1f0a86bee7813db7f7d8473e400340fdc1930af29b54135
+      - type: file
+        path: ./install.sh
+      - type: archive
+        url: >-
+          https://raw.githubusercontent.com/sonatype/maven-guide-zh/master/content-zh/src/main/resources/fonts/simsun.ttc
+      - type: archive
+        url: >-
+          https://raw.githubusercontent.com/owent-utils/font/master/%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91/MSYH.TTC
