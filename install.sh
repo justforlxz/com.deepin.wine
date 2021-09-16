@@ -6,9 +6,8 @@ for _deb in $(ls *.deb); do
 done
 
 cp -a usr /
+cp -a opt /
 
-cp opt/deepinwine/* /usr/share/deepin-wine/ -r
-
-cp *.ttc /usr/share/deepin-wine/wine/fonts
+cp *.ttc /usr/share/deepin-wine5/wine/fonts
 
 echo "Done"
