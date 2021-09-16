@@ -21,8 +21,28 @@
       "cleanup": [],
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git"
+          "type": "file",
+          "url": "https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-elf-verify_0.2.0.6-1_amd64.deb"
+        },
+        {
+          "type": "file",
+          "url": "https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-i386_5.0.16-1_i386.deb"
+        },
+        {
+          "type": "file",
+          "url": "https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable-amd64_5.0.33-1_amd64.deb"
+        },
+        {
+          "type": "file",
+          "url": "https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable-i386_5.0.33-1_i386.deb"
+        },
+        {
+          "type": "file",
+          "url": "https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable_5.0.33-1_amd64.deb"
+        },
+        {
+          "type": "file",
+          "url": "https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5_5.0.16-1_i386.deb"
         },
         {
           "type": "file",
