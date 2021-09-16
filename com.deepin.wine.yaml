@@ -17,7 +17,7 @@ modules:
     cleanup: []
     sources:
       - type: file
-        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine.tar
-        sha256: 94b711f66390a50552ff02b39a1bbe64ff4364c9aab345297354fef11f4eb225
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine.zip
+        sha256: a6d336c84d4c47ef0a2291df883b55bb8a0e2c0e941d81f7925fbffb11a0fdcd
       - type: file
         path: ./install.sh
