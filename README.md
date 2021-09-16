@@ -12,13 +12,13 @@ flatpak install flathub org.freedesktop.Sdk/i386/18.08
 ## 构建运行时
 
 ```shell
-flatpak-builder --repo=repo --arch=i386 .build com.deepin.wine.json
+flatpak-builder --repo=repo .build com.deepin.wine.yaml
 ```
 
 ## 测试运行时
 
 ```shell
-flatpak-builder --run .build com.deepin.wine.json deepin-wine --version
+flatpak-builder --run .build com.deepin.wine.yaml deepin-wine5 --version
 ```
 
 ## 安装运行时

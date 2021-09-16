@@ -1,4 +1,6 @@
 echo "Start installing..."
+ls /app
+tar -xvf deepin-wine.tar
 
 for _deb in $(ls *.deb); do
     echo "Installing $_deb"
