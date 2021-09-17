@@ -1,14 +1,26 @@
 id: com.deepin.wine.Sdk
 id-platform: com.deepin.wine.Platform
 branch: 5.0.0
-runtime: org.freedesktop.Platform/i386
-runtime-version: '18.08'
-sdk: org.freedesktop.Sdk/i386
+runtime: org.freedesktop.Platform/x86_64/
+runtime-version: '20.08'
+sdk: org.freedesktop.Sdk/x86_64/
 build-runtime: true
 separate-locales: false
+sdk-extensions:
+#  - org.freedesktop.Sdk.Debug
+#  - org.freedesktop.Sdk.Locale
+inherit-extensions:
+  - org.freedesktop.Platform.GL
+  - org.freedesktop.Platform.Timezones
+  - org.freedesktop.Platform.GStreamer
+  - org.freedesktop.Platform.Icontheme
+  - org.freedesktop.Platform.VAAPI.Intel
+  - org.freedesktop.Sdk.Extension
+#platform-extensions:
+#  - org.freedesktop.Platform.Locale
 finish-args:
-  - '--sdk=com.deepin.wine.Sdk//5.0.0'
-  - '--runtime=com.deepin.wine.Platform//5.0.0'
+  - '--sdk=com.deepin.wine.Sdk/x86_64/5.0.0'
+  - '--runtime=com.deepin.wine.Platform/x86_64/5.0.0'
 modules:
   - name: deepin-wine
     buildsystem: simple
@@ -17,7 +29,7 @@ modules:
     cleanup: []
     sources:
       - type: file
-        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine.zip
-        sha256: a6d336c84d4c47ef0a2291df883b55bb8a0e2c0e941d81f7925fbffb11a0fdcd
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine.tar.xz
+        sha256: 8cb9425f360c80bd0d863f5d54b2531f9029f2d83f3c03f3ae5c3ba0364db1fc
       - type: file
         path: ./install.sh
