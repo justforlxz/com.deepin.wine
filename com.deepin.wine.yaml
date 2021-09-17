@@ -1,9 +1,9 @@
 id: com.deepin.wine.Sdk
 id-platform: com.deepin.wine.Platform
 branch: 5.0.0
-runtime: org.freedesktop.Platform/x86_64/
-runtime-version: '20.08'
-sdk: org.freedesktop.Sdk/x86_64/
+runtime: org.freedesktop.Platform/i386/
+runtime-version: '18.08'
+sdk: org.freedesktop.Sdk/i386/
 build-runtime: true
 separate-locales: false
 sdk-extensions:
@@ -19,8 +19,8 @@ inherit-extensions:
 #platform-extensions:
 #  - org.freedesktop.Platform.Locale
 finish-args:
-  - '--sdk=com.deepin.wine.Sdk/x86_64/5.0.0'
-  - '--runtime=com.deepin.wine.Platform/x86_64/5.0.0'
+  - '--sdk=com.deepin.wine.Sdk/i386/5.0.0'
+  - '--runtime=com.deepin.wine.Platform/i386/5.0.0'
 modules:
   - name: deepin-wine
     buildsystem: simple
@@ -29,7 +29,31 @@ modules:
     cleanup: []
     sources:
       - type: file
-        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine.tar.xz
-        sha256: 8cb9425f360c80bd0d863f5d54b2531f9029f2d83f3c03f3ae5c3ba0364db1fc
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/patch.0
+        sha256: 4a3e24f41e67e816415f318689638e9a6a5fe0d205eeb83f9ab9d6cb8a0e55a7
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5_5.0.16-1_i386.deb
+        sha256: c50f7095baa3c8f9ff330ad5215c439362a8f3e0f7621a20ecea0890e9e3c621
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-i386_5.0.16-1_i386.deb
+        sha256: ea3f354438483a0f8f48e015905bc52a41a06d6ff27910c8b71f22f7fb223bdf
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine5-stable-i386_5.0.33-1_i386.deb
+        sha256: 49cdaa65b237900b431c1c7b2c11bf1f6460d904bba42bf6697f638a69d054b5
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/deepin-wine-helper_5.1.29-1_i386.deb
+        sha256: 953b64785e902137fca5a36886e799b0e3ee087ced0ef2b4946671612ccb7a0c
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/p7zip-full_16.02+dfsg.1-1+dde_i386.deb
+        sha256: 1f3d5aad6db7df967a0c738de937aec66828afb5f33de405fadc369726b65115
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/udis86_1.72-4_i386.deb
+        sha256: ec874ecdf12f95d634c038a4dd2915951aae09753f4baba50b2074d154e04374
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/MSYH.TTC
+        sha256: 34cb01a122f82b5ad76ee916dbb34ac35edb2916b857ac6ed4c8593a759ad5ab
+      - type: file
+        url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/simsun.ttc
+        sha256: ff7d69bfa6588d3fdedbddbe3a29ac11f0c50236723ee72a9ea49ec3e2553f5d
       - type: file
         path: ./install.sh
