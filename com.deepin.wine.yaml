@@ -1,41 +1,23 @@
 id: com.deepin.wine.Sdk
 id-platform: com.deepin.wine.Platform
 branch: 5.0.0
-runtime: org.freedesktop.Platform/i386/
+runtime: org.freedesktop.Platform/i386
 runtime-version: '18.08'
-sdk: org.freedesktop.Sdk/i386/
+sdk: org.freedesktop.Sdk/i386
 build-runtime: true
 separate-locales: false
-#sdk-extensions:
-#  - org.freedesktop.Sdk.Debug/i386/18.08
-#  - org.freedesktop.Sdk.Locale/i386/18.08
-#inherit-extensions:
-#  - org.freedesktop.Platform.GL
-#  - org.freedesktop.Platform.Timezones
-#  - org.freedesktop.Platform.GStreamer
-#  - org.freedesktop.Platform.Icontheme
-#  - org.freedesktop.Platform.VAAPI.Intel
-#  - org.freedesktop.Sdk.Extension
-#platform-extensions:
-#  - org.freedesktop.Platform.Locale/i386/18.08
 finish-args:
-  - '--sdk=com.deepin.wine.Sdk/i386/5.0.0'
-  - '--runtime=com.deepin.wine.Platform/i386/5.0.0'
+  - '--sdk=com.deepin.wine.Sdk//5.0.0'
+  - '--runtime=com.deepin.wine.Platform//5.0.0'
 modules:
-  # Create 32-bit directories
-  - name: compat
-    buildsystem: simple
-    build-commands:
-      - mkdir -p /app/lib/i386-linux-gnu
-      - mkdir -p /app/lib64
-      - mkdir -p /app/lib32
   - name: deepin-wine
     buildsystem: simple
     build-commands:
       - ./install.sh
     post-install:
-      - mkdir /opt
-      - touch /usr/test.file
+      - rm -rf usr/share/{doc,man}
+      - cp -dr usr/* $FLATPAK_DEST/
+      - cp -dr opt/* $FLATPAK_DEST/
     cleanup: []
     sources:
       - type: file
