@@ -13,7 +13,20 @@ modules:
   - name: deepin-wine
     buildsystem: simple
     build-commands:
-      - ./install.sh
+      - echo 'Extra files'
+      - ar p deepin-wine5-stable_5.0.33-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine5-stable-dev_5.0.33-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine5-stable-i386_5.0.33-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine6-stable_6.0.0.17-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine6-stable-dev_6.0.0.17-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine6-stable-i386_6.0.0.17-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine-helper_5.1.29-1_i386.deb data.tar.xz | tar -xJ
+      - ar p deepin-wine-plugin_5.1.29-1_i386.deb data.tar.xz | tar -xJ
+      - echo 'Patch files'
+      - patch -p0 < patch.0
+      - sed -i "s/\/opt/\/usr/g" `grep /opt -rl opt`
+      - sed -i "s/\/opt/\/usr/g" `grep /opt -rl usr`
+      - echo 'Extra Done'
     post-install:
       - rm -rf usr/share/{doc,man}
       - cp -dr usr/* $FLATPAK_DEST/
@@ -59,5 +72,3 @@ modules:
       - type: file
         url: https://github.com/justforlxz/com.deepin.wine/releases/download/1.0/simsun.ttc
         sha256: ff7d69bfa6588d3fdedbddbe3a29ac11f0c50236723ee72a9ea49ec3e2553f5d
-      - type: file
-        path: ./install.sh
